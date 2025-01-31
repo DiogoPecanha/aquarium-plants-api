@@ -20,7 +20,8 @@ import java.util.List;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Value("${jwt.secret}")
-    private  String secretKey;
+    private String secretKey = "w4WHSHs22nvw75OPTEb3TIPhNrrpyMMK";
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

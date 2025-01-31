@@ -24,11 +24,13 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/plantas/**").hasAuthority("USER")
                         .requestMatchers( "/swagger-ui.html",
                                 "/swagger-ui/**",
+                                "/context-path/**",
                                 "/v3/api-docs/**",
                                 "/swagger-resources/**",
                                 "/webjars/**"
                         ).permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest()
+                        .authenticated()
                 )
                 .addFilterBefore(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class); // Adiciona o filtro JWT
 
