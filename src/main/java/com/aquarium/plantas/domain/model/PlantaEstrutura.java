@@ -1,5 +1,9 @@
 package com.aquarium.plantas.domain.model;
 
+import com.aquarium.plantas.domain.service.utils.EnumUtils;
+
+import java.util.List;
+
 public enum PlantaEstrutura {
     RIZOMA("Rizoma"),
     CAULE("Caule"),
@@ -16,5 +20,9 @@ public enum PlantaEstrutura {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public static List<KeyValuePair> toKeyValueList() {
+        return EnumUtils.toKeyValueList(PlantaEstrutura.class, PlantaEstrutura::getDescricao);
     }
 }

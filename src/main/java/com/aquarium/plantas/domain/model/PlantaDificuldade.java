@@ -1,5 +1,9 @@
 package com.aquarium.plantas.domain.model;
 
+import com.aquarium.plantas.domain.service.utils.EnumUtils;
+
+import java.util.List;
+
 public enum PlantaDificuldade {
     FACIL("Fácil"),
     MEDIO("Médio"),
@@ -13,5 +17,9 @@ public enum PlantaDificuldade {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public static List<KeyValuePair> toKeyValueList() {
+        return EnumUtils.toKeyValueList(PlantaDificuldade.class, PlantaDificuldade::getDescricao);
     }
 }

@@ -25,7 +25,7 @@ public class PlantaController {
 
     public ResponseEntity<Page<Planta>> getAllPlantas(@RequestParam(defaultValue = "0") Integer page,
                                                       @RequestParam(defaultValue = "10") Integer size,
-                                                      @RequestParam(defaultValue = "id,asc")String sort) {
+                                                      @RequestParam(defaultValue = "id,asc") String sort) {
         logger.info("GET /api/v1/plantas - page: {}, size: {}, sort: {}", page, size, sort);
 
         Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
